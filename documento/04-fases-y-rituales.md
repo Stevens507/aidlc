@@ -1,6 +1,6 @@
 # 4. Fases y rituales
 
-El ciclo tiene tres fases. Cada una responde una pregunta distinta y trae su propia forma de trabajo en equipo.
+El ciclo tiene tres fases. Las dos primeras traen un ritual propio de trabajo en equipo.
 
 [Figura 3 — El ciclo completo]
 
