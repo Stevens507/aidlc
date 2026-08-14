@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" font-family="Verdana, Geneva, sans-serif">
+  <rect width="900" height="700" fill="#FFFFFF"/>
+
+  <!-- título -->
+  <text x="450" y="42" text-anchor="middle" font-size="21" font-weight="bold" fill="#1B2A5B">El flujo: nueve pasos, tres fases</text>
+
+  <!-- INCEPTION -->
+  <rect x="50" y="80" width="650" height="170" rx="10" fill="#EAF4FB" stroke="#2E86C1" stroke-width="1.5"/>
+  <text x="80" y="118" font-size="17" font-weight="bold" fill="#1B2A5B">Inception</text>
+  <text x="80" y="139" font-size="12" fill="#53595F">qué construir y por qué</text>
+  <g font-size="14.5" fill="#1B2A5B">
+    <text x="300" y="122">1 · Construir contexto desde el código existente</text>
+    <text x="300" y="164">2 · Elaborar el intent en historias de usuario</text>
+    <text x="300" y="206">3 · Planificar las Units of Work</text>
+  </g>
+
+  <!-- CONSTRUCTION -->
+  <rect x="50" y="270" width="650" height="212" rx="10" fill="#F2F8EA" stroke="#7AC143" stroke-width="1.5"/>
+  <text x="80" y="308" font-size="17" font-weight="bold" fill="#1B2A5B">Construction</text>
+  <text x="80" y="329" font-size="12" fill="#53595F">cómo construirlo, en Bolts</text>
+  <g font-size="14.5" fill="#1B2A5B">
+    <text x="300" y="312">4 · Modelar el dominio, codificar y probar</text>
+    <text x="300" y="354">5 · Resolver los requisitos no funcionales</text>
+    <text x="300" y="396">6 · Resolver la arquitectura de despliegue</text>
+    <text x="300" y="438">7 · Generar la infraestructura como código y probar</text>
+  </g>
+
+  <!-- OPERATIONS -->
+  <rect x="50" y="502" width="650" height="128" rx="10" fill="#F2F3F5" stroke="#8A9199" stroke-width="1.5"/>
+  <text x="80" y="540" font-size="17" font-weight="bold" fill="#1B2A5B">Operations</text>
+  <text x="80" y="561" font-size="12" fill="#53595F">mantenerlo vivo</text>
+  <g font-size="14.5" fill="#1B2A5B">
+    <text x="300" y="544">8 · Desplegar en producción</text>
+    <text x="300" y="586">9 · Monitorear y gestionar incidentes</text>
+  </g>
+
+  <!-- flechas entre fases -->
+  <defs>
+    <marker id="af" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#1B2A5B"/>
+    </marker>
+  </defs>
+  <line x1="375" y1="250" x2="375" y2="266" stroke="#1B2A5B" stroke-width="2.5" marker-end="url(#af)"/>
+  <line x1="375" y1="482" x2="375" y2="498" stroke="#1B2A5B" stroke-width="2.5" marker-end="url(#af)"/>
+
+  <!-- riel derecho: contexto acumulado -->
+  <line x1="760" y1="100" x2="760" y2="600" stroke="#2E86C1" stroke-width="2.5" marker-end="url(#af)"/>
+  <g font-size="12.5" fill="#53595F">
+    <text x="778" y="320">Cada paso construye</text>
+    <text x="778" y="340">un contexto más rico</text>
+    <text x="778" y="360">para el siguiente</text>
+  </g>
+
+  <!-- pie -->
+  <text x="50" y="668" font-size="11.5" fill="#8A9199">Los nueve pasos son los del Method Definition Paper de AWS (julio de 2025).</text>
+</svg>
