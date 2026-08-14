@@ -1,9 +1,9 @@
 # 8. Adopción
 
-Cómo entra al método alguien que llega al equipo, y cómo entra el método a un proyecto que ya está en marcha.
+La inducción al método es la misma para todo el equipo, sin importar el proyecto en el que esté.
 
 El método se aprende practicándolo. AWS lo plantea de forma explícita: en lugar de estudiar documentación y pasar por una capacitación, el equipo practica los rituales sobre trabajo real que ya tiene entre manos.
 
-Quien llega al equipo lee este documento y arranca. Su primer trabajo no es un ejercicio, es un cambio real acompañado por alguien que ya recorrió el ciclo. La lectura entrega el vocabulario —Intent, Unit, Bolt, los rituales— y el acompañamiento entrega el resto.
+Este documento es el punto de partida y está preparado para todo el equipo. Sobre él, la inducción cubre las herramientas con las que se trabaja, el flujo que recorre un cambio de principio a fin y por qué el método importa: qué problema resuelve y qué evita.
 
-Un proyecto en marcha no se detiene para adoptar el método. El siguiente cambio que cumpla los criterios de la sección 2 entra por Inception y recorre el ciclo completo; los demás siguen como hasta ahora. La adopción avanza cambio por cambio, al mismo ritmo que el trabajo.
+Después viene la práctica. El primer trabajo no es un ejercicio, es un cambio real acompañado por alguien que ya recorrió el ciclo.
