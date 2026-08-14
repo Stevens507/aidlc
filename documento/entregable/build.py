@@ -52,9 +52,9 @@ def q(t):
 
 # ------------------------------------------------------------------ figuras
 FIGURAS = [
-    ('figura1.png', os.path.join(REPO, 'figuras/fig1-mental-model.png')),
-    ('figura2.png', os.path.join(REPO, 'figuras/fig2-nueve-pasos.png')),
-    ('figura3.png', os.path.join(REPO, 'borradores/imagenes-presentacion/aws-paper_ciclo-completo.png')),
+    ('figura1.png', os.path.join(REPO, 'figuras/final-fig1-mental-model.png')),
+    ('figura2.png', os.path.join(REPO, 'figuras/final-fig3-nueve-pasos.png')),
+    ('figura3.png', os.path.join(REPO, 'figuras/final-fig2-ciclo-completo.png')),
 ]
 RID = {}
 DIMS = {}
@@ -280,7 +280,7 @@ def contenido():
             'en cada actividad, la IA analiza el contexto, propone un plan y pregunta lo que no '
             'sabe. El equipo corrige y aprueba; con esa aprobación, la IA implementa. El mismo '
             'ciclo gobierna los requisitos, el diseño, el código, las pruebas y el despliegue.')]
-    C += [figura('figura1.png', 'Figura 1. La IA propone, el equipo decide.')]
+    C += [figura('figura1.png', 'Figura 1. La IA propone, el equipo decide.', 4.2)]
     C += [p('El método nace de un límite que a menudo afecta al equipo de desarrollo: el '
             'asistente que autocompleta hace tareas sueltas sin contexto del sistema, y la IA '
             'que construye sola entrega software que nadie puede defender ante un cliente. '
@@ -339,7 +339,7 @@ def contenido():
     C += [p('La metodología ordena el trabajo en tres fases y define cómo trabaja el equipo '
             'dentro de cada una. Los rituales son esas sesiones de trabajo: el equipo revisa en '
             'vivo lo que la IA propuso y decide sobre la marcha.')]
-    C += [figura('figura3.png', 'Figura 2. El ciclo completo: roles, fases y artefactos.', 5.4)]
+    C += [figura('figura3.png', 'Figura 2. El ciclo completo: roles, fases y artefactos.', 5.9)]
     C += [h3('Inception: qué construir y por qué')]
     C += [p('La IA propone las historias de usuario, los criterios de aceptación, los requisitos '
             'no funcionales, los riesgos y la descomposición del Intent en Units. El equipo '
@@ -363,7 +363,7 @@ def contenido():
 
     C += [h1('5. EL FLUJO')]
     C += [p('El ciclo se recorre en nueve pasos, del Intent al sistema en producción.')]
-    C += [figura('figura2.png', 'Figura 3. Los nueve pasos, agrupados en las tres fases.')]
+    C += [figura('figura2.png', 'Figura 3. Los nueve pasos, agrupados en las tres fases.', 5.9)]
     C += [p('El recorrido empieza con un plan. La IA lee la intención de negocio y propone los '
             'pasos necesarios para llevarla a cabo; el equipo lo revisa, lo corrige y lo aprueba. '
             'Después la IA descompone cada paso en tareas más finas, bajo la misma revisión. '
