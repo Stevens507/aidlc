@@ -6,7 +6,7 @@ El método trabaja con seis artefactos. Tres organizan el trabajo y tres son el 
 
 | Artefacto | Qué es |
 |---|---|
-| **Intent** | Lo que se quiere lograr, dicho en términos de negocio. El equipo fija el destino y la IA propone el camino. |
+| **Intent** | Lo que se quiere lograr, dicho en términos de negocio. El equipo define el destino y la IA propone el camino. |
 | **Unit** | Una parte del sistema que se construye y se entrega por sí sola. Un Intent se descompone en Units; equivalen a los subdominios del diseño guiado por el dominio o a las épicas de Scrum. |
 | **Bolt** | El ciclo en que se construye un Unit. Es lo que en Scrum era el sprint, pero de horas o días en lugar de semanas. Un Unit puede necesitar varios Bolts. |
 
