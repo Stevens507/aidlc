@@ -1,5 +1,7 @@
 # 4. Fases y rituales
 
+Un ritual es la sesión donde el equipo revisa en vivo lo que la IA propuso y decide sobre la marcha. Según el paper, concentra en horas el trabajo que en secuencia tomaba semanas.
+
 [Figura 3 — El ciclo completo]
 
 ## Inception: qué construir y por qué
