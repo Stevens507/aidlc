@@ -1,6 +1,6 @@
 # 4. Fases y rituales
 
-La metodología ordena el trabajo en tres fases y define cómo trabaja el equipo dentro de cada una.
+La metodología ordena el trabajo en tres fases y define cómo trabaja el equipo dentro de cada una. Los rituales son esas sesiones de trabajo: el equipo revisa en vivo lo que la IA propuso y decide sobre la marcha.
 
 [Figura 3 — El ciclo completo]
 

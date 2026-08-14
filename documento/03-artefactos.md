@@ -1,6 +1,6 @@
 # 3. Artefactos
 
-El método trabaja con seis artefactos. Tres organizan el trabajo y tres son el producto de la construcción.
+Un artefacto es una pieza concreta del ciclo: algo que se define, se aprueba y queda registrado. Son seis. Tres organizan el trabajo y tres son el producto de la construcción.
 
 ## Los que organizan el trabajo
 
