@@ -49,6 +49,18 @@ Cada una de estas, si aparece, se corrige. No son sugerencias.
 
 **Emojis, exclamaciones y preguntas retóricas** en títulos o cuerpo. Ninguno.
 
+**Huir del verbo ser.** «Se erige como», «funciona como», «se posiciona como», «sirve como» donde alcanza con «es». La IA evita la cópula; el autor humano dice «el Bolt es la unidad de construcción» y sigue.
+
+**Grandilocuencia de importancia.** «Marca un hito», «representa un cambio de paradigma», «juega un papel crucial en el panorama de», «deja un legado». Si algo importa, se muestra con el hecho; declararlo importante es no tener el hecho.
+
+**Atribución fantasma.** «Los expertos señalan», «se considera que», «es ampliamente reconocido». O hay una fuente con nombre, o la afirmación es nuestra y se asume.
+
+**Raya (—) como muletilla.** Una cada tanto, bien. Tres por párrafo convierten la prosa en apartes encadenados; se reescriben como frases.
+
+**Cierre tipo esquema.** «A pesar de X, el método enfrenta desafíos…» como párrafo final de sección. Es el molde de conclusión de la IA; una sección técnica termina en su último hecho.
+
+*Referencia externa: el catálogo «Signs of AI writing» de Wikipedia (los patrones que sus editores documentaron limpiando texto generado) coincide con esta lista y agrega las de formato: negrita sembrada, exceso de raya, title case en títulos, tablas donde va prosa. Ante la duda, esa guía es el estándar.*
+
 ## Cómo se escribe (no solo qué se evita)
 
 - **Primero el hecho, después la consecuencia.** «AWS liberó la implementación como código abierto en diciembre de 2025. Eso permite X» — no al revés, no en abstracto.
