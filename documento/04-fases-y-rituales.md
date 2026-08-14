@@ -1,6 +1,6 @@
 # 4. Fases y rituales
 
-Cómo se ordena el trabajo a lo largo del ciclo y cómo trabaja el equipo en cada fase.
+La metodología ordena el trabajo en tres fases y define cómo trabaja el equipo dentro de cada una.
 
 [Figura 3 — El ciclo completo]
 
