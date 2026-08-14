@@ -2,7 +2,7 @@
 
 El proceso deja constancia de quién decidió qué. Esa constancia es lo que responde a un auditor o al oficial de cumplimiento de un cliente.
 
-La regla que gobierna todo lo demás es la §13.5 de la política de gobernanza de IA:
+La política de gobernanza de IA del grupo fija la regla que gobierna todo lo demás:
 
 > Todo código generado por IA pasa revisión humana antes de integrarse. El merge lo ejecuta siempre una persona identificable.
 
