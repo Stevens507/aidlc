@@ -9,6 +9,4 @@ El alcance se decide por cambio, no por proyecto. Un cambio recorre el ciclo com
 - lleva más de dos días de trabajo;
 - automatiza una decisión que afecta a una persona.
 
-Si no cumple ninguna, entra directo a la construcción con el ticket como única especificación. En duda, el camino corto: una especificación que nadie va a leer cuesta más de lo que evita.
-
-Los casos dudosos los resuelve quien responde por el cambio. [Pendiente: confirmar quién ocupa ese rol en cada proyecto.]
+Si no cumple ninguna, entra directo a la construcción con el ticket como única especificación.
