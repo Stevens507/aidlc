@@ -4,6 +4,6 @@ AI-DLC es la metodología de AWS para construir software con IA generativa, publ
 
 [Figura 1 — La IA propone, el equipo decide]
 
-El método nace de un límite que ya todos conocen: el asistente que autocompleta hace tareas sueltas sin contexto del sistema, y la IA que construye sola entrega software que nadie del equipo puede defender ante un cliente. AI-DLC evita los dos extremos: la IA hace el trabajo, una persona toma cada decisión.
+El método nace de un límite que a menudo afecta al equipo de desarrollo: el asistente que autocompleta hace tareas sueltas sin contexto del sistema, y la IA que construye sola entrega software que nadie puede defender ante un cliente. AI-DLC evita los dos extremos: la IA hace el trabajo, una persona toma cada decisión.
 
 Este documento describe cómo el equipo de IA Generativa de Grupo TX aplica el método.
