@@ -1,7 +1,5 @@
 # 4. Fases y rituales
 
-El ciclo tiene tres fases. Las dos primeras traen un ritual propio de trabajo en equipo.
-
 [Figura 3 — El ciclo completo]
 
 ## Inception: qué construir y por qué
