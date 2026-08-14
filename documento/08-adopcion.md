@@ -1,9 +1,12 @@
 # 8. Adopción
 
-La inducción al método es la misma para todo el equipo, sin importar el proyecto en el que esté.
+La inducción al método es la misma para todo el equipo, sin importar el proyecto en el que esté. El método no se estudia, se practica: los rituales se aprenden ejecutándolos sobre trabajo real.
 
-El método se aprende practicándolo. AWS lo plantea de forma explícita: en lugar de estudiar documentación y pasar por una capacitación, el equipo practica los rituales sobre trabajo real que ya tiene entre manos.
+La inducción tiene cuatro piezas:
 
-Este documento es el punto de partida y está preparado para todo el equipo. Sobre él, la inducción cubre las herramientas con las que se trabaja, el flujo que recorre un cambio de principio a fin y por qué el método importa: qué problema resuelve y qué evita.
+- **Este documento** — el vocabulario, el ciclo completo y por qué el método importa.
+- **Las herramientas del proyecto** — instaladas y configuradas, con las reglas del repositorio cargadas.
+- **El flujo de un cambio** — un caso recorrido de principio a fin, del Intent al despliegue.
+- **El primer trabajo acompañado** — un cambio real, no un ejercicio, junto a alguien que ya recorrió el ciclo.
 
-Después viene la práctica. El primer trabajo no es un ejercicio, es un cambio real acompañado por alguien que ya recorrió el ciclo.
+La inducción termina cuando ese primer cambio llega a producción.
