@@ -1,6 +1,6 @@
 # 4. Fases y rituales
 
-Un ritual es la sesión donde el equipo revisa en vivo lo que la IA propuso y decide sobre la marcha. Según el paper, concentra en horas el trabajo que en secuencia tomaba semanas.
+Cómo se ordena el trabajo a lo largo del ciclo y cómo trabaja el equipo en cada fase.
 
 [Figura 3 — El ciclo completo]
 
