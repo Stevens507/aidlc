@@ -1,16 +1,14 @@
 # 6. Herramientas y skills
 
-Cada fase se apoya en herramientas concretas. El inventario indica cuáles están en uso y cuáles son propuesta.
+El método no depende de una plataforma. Define qué capacidad hace falta en cada fase; cada proyecto la cubre con la herramienta que tenga.
 
-Una skill es un paquete de estándares e instrucciones que la herramienta carga sola cuando la tarea coincide. Sirve para que todos sigan el mismo proceso sin tener que recordarlo.
+| Fase | Qué capacidad hace falta | Con qué se cubre hoy | Estado |
+|---|---|---|---|
+| Inception | Producir la spec en tres artefactos, cada uno con aprobación explícita | Kiro | Propuesto |
+| Construction | Un asistente que cargue las reglas del repositorio, y una revisión con veredicto antes de integrar | Claude Code; Forge | Real |
+| Operations | Verificaciones automáticas en cada cambio | El CI de cada proyecto, con definiciones por stack | Real |
 
-| Fase | Herramientas y skills | Estado |
-|---|---|---|
-| Inception | Kiro para las specs: requirements, design y tasks | Propuesto |
-| Construction | Claude Code con las reglas del repositorio y las skills de dominio; Forge para la revisión, con veredicto PASS, DENY o DENYSPEC | Real |
-| Operations | El CI de cada proyecto, con definiciones por stack | Real |
-
-Las reglas viven en cada repositorio y los agentes las cargan como contexto: estilo de Python, patrones de Terraform, convenciones de pruebas. Las skills del área hoy están dispersas entre repositorios; unificarlas en una familia común es trabajo pendiente.
+Una skill es un paquete de estándares e instrucciones que la herramienta carga sola cuando la tarea coincide. Sirve para que todos sigan el mismo proceso sin tener que recordarlo. Las reglas funcionan igual: viven en cada repositorio y los agentes las cargan como contexto — estilo de Python, patrones de Terraform, convenciones de pruebas.
 
 Una regla que importa no se queda escrita. Baja al CI o a un hook de git, donde actúa sin que nadie se acuerde de invocarla.
 
