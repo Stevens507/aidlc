@@ -8,8 +8,8 @@ El método no depende de una plataforma. Define qué capacidad hace falta en cad
 | Construction | Un asistente que cargue las reglas del repositorio, y una revisión con veredicto antes de integrar | Claude Code; Forge, orquestación de corridas autónomas con revisores y veredicto PASS/DENY/DENYSPEC | Real |
 | Operations | Verificaciones automáticas en cada cambio | El CI de cada proyecto, con definiciones por stack | Real |
 
-Una skill es un paquete de estándares e instrucciones que la herramienta carga sola cuando la tarea coincide. Sirve para que todos sigan el mismo proceso sin tener que recordarlo.
+La herramienta importa menos que lo que se le carga. Una skill es un paquete de estándares e instrucciones que la herramienta levanta sola cuando la tarea coincide, y con eso todos recorren el mismo camino sin tener que acordarse de nada.
 
-Una regla que importa no se queda escrita. Baja al CI o a un hook de git, donde actúa sin que nadie se acuerde de invocarla.
+Ese mecanismo tiene un límite: funciona mientras alguien lo invoque. Por eso una regla que importa de verdad no se queda escrita, baja al CI o a un hook de git y actúa sin que nadie la llame.
 
-La metodología apunta, no duplica: cada herramienta mantiene su propia documentación.
+El resto se queda donde ya está. La metodología apunta y no duplica: cada herramienta mantiene su propia documentación.
