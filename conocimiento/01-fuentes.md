@@ -2,7 +2,7 @@
 
 Recopilado el 2026-08-19 leyendo clones de las dos ramas: `main` (1.0.1) y `v2` (commit `fbb1460c`, **2.6.18**).
 
-> Las dos ramas están guardadas en este repositorio, en la misma versión que se estudió: [`../fuentes/repo-oficial/main/`](../fuentes/repo-oficial/main/) y [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/).
+> Las dos ramas están guardadas en este repositorio, en la misma versión que se estudió: [`../fuentes/repo-oficial/main/`](../fuentes/repo-oficial/main/) y [`../aidlc-v2/`](../aidlc-v2/).
 
 El **texto completo** de estas fuentes está en [`../fuentes/`](../fuentes/FUENTES.md) — ~16.500 palabras.
 
@@ -19,10 +19,10 @@ Ver también: [02 — cómo funciona](02-como-funciona.md) · [03 — qué falta
 | Blog: *Open-Sourcing Adaptive Workflows for AI-DLC* — [origen](https://aws.amazon.com/blogs/devops/open-sourcing-adaptive-workflows-for-ai-driven-development-life-cycle-ai-dlc/) | [`blog-02`](../fuentes/blogs/2025-11-29_open-sourcing-adaptive-workflows.md) | 2025-11-29 | Anuncio de **v1** open source. Autores: Will Matos, Raj Jain, Siddhesh Jog, Raja SP. |
 | Blog: *Building with AI-DLC using Amazon Q Developer* — [origen](https://aws.amazon.com/blogs/devops/building-with-ai-dlc-using-amazon-q-developer/) | [`blog-03`](../fuentes/blogs/2025-11-29_building-with-ai-dlc-using-amazon-q-developer.md) | 2025-11-29 | Walkthrough práctico sobre Q Developer. |
 | Blog: *AI-Driven Development Lifecycle for Financial Services* — [origen](https://aws.amazon.com/blogs/industries/ai-driven-development-lifecycle-for-financial-services/) | [`blog-04`](../fuentes/blogs/2026-05-26_ai-driven-development-lifecycle-for-financial-services.md) | 2026-05-26 | **El más útil para entorno regulado**: steering files que codifican política antes de generar, más trazabilidad requisito→test. |
-| Sitio de documentación v2 — [origen](https://awslabs.github.io/aidlc-workflows/) | [`../fuentes/repo-oficial/v2/docs/`](../fuentes/repo-oficial/v2/docs/) · índice en [05](05-mapa-docs-v2.md) | vigente | Las tres guías. Mismo contenido que `aidlc-v2/docs/`. |
-| Roadmap — [origen](https://awslabs.github.io/aidlc-workflows/roadmap.html) | [`../fuentes/repo-oficial/v2/docs/roadmap.md`](../fuentes/repo-oficial/v2/docs/roadmap.md) | 2026-08-10 | Qué salió, qué está en vuelo, qué está planeado. Fuente de §3 del doc 03. |
-| **Whitepaper: AI-DLC Workflows 2.0 Specification** (PDF, 6 pp.) | [PDF](../fuentes/repo-oficial/v2/assets/AI-DLC-Workflows-2.0-Specification.pdf) · [texto](../fuentes/especificacion/aidlc-workflows-2.0-specification-texto.md) | 2026 | **La fuente clave de v2.** Los 9 principios, la estructura y el orquestador. Resumido abajo. |
-| Repo — [origen](https://github.com/awslabs/aidlc-workflows/tree/v2) | [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/) | vigente | Implementación. Licencia MIT-0. |
+| Sitio de documentación v2 — [origen](https://awslabs.github.io/aidlc-workflows/) | [`../aidlc-v2/docs/`](../aidlc-v2/docs/) · índice en [05](05-mapa-docs-v2.md) | vigente | Las tres guías. Mismo contenido que `aidlc-v2/docs/`. |
+| Roadmap — [origen](https://awslabs.github.io/aidlc-workflows/roadmap.html) | [`../aidlc-v2/docs/roadmap.md`](../aidlc-v2/docs/roadmap.md) | 2026-08-10 | Qué salió, qué está en vuelo, qué está planeado. Fuente de §3 del doc 03. |
+| **Whitepaper: AI-DLC Workflows 2.0 Specification** (PDF, 6 pp.) | [PDF](../aidlc-v2/assets/AI-DLC-Workflows-2.0-Specification.pdf) · [texto](../fuentes/especificacion/aidlc-workflows-2.0-specification-texto.md) | 2026 | **La fuente clave de v2.** Los 9 principios, la estructura y el orquestador. Resumido abajo. |
+| Repo — [origen](https://github.com/awslabs/aidlc-workflows/tree/v2) | [`../aidlc-v2/`](../aidlc-v2/) | vigente | Implementación. Licencia MIT-0. |
 
 > **Hallazgo:** *no existe blog post oficial de AWS dedicado a v2 / 2.0 GA.* El anuncio de GA vive en el README del repo y en el whitepaper PDF. Los blogs de AWS indexados siguen describiendo v1. Si un documento cita «el blog de AWS» para justificar v2, la cita correcta es el whitepaper, no un blog.
 

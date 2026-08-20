@@ -13,7 +13,7 @@ La v2 **no reemplaza al paper: lo materializa.** El modelo mental del paper —l
 | **Construction** | `construction` | 7 |
 | **Operations** | `operation` | 7 |
 
-Verificado en [`../fuentes/repo-oficial/v2/core/tools/aidlc-lib.ts`](../fuentes/repo-oficial/v2/core/tools/aidlc-lib.ts) línea 130, constante `PHASES`, y contando los directorios de `core/aidlc-common/stages/`: 3 + 7 + 9 + 7 + 7 = 33.
+Verificado en [`../aidlc-v2/core/tools/aidlc-lib.ts`](../aidlc-v2/core/tools/aidlc-lib.ts) línea 130, constante `PHASES`, y contando los directorios de `core/aidlc-common/stages/`: 3 + 7 + 9 + 7 + 7 = 33.
 
 **La trampa está en la palabra «Inception».** En el paper abarca lo que en la 2.0 son dos fases; en la 2.0 nombra solo la segunda. Quien lea el paper y luego vea una pantalla que dice `INCEPTION` va a creer que está más avanzado de lo que está. Y hay un desplazamiento de frontera además del desdoble: el paper pone los modelos de dominio en Construction, la 2.0 los tiene en inception. **La propia documentación de AWS no declara este mapeo en ninguna parte** — lo buscamos en su `docs/` y en su `core/`.
 
@@ -36,8 +36,7 @@ Los tres diagramas y qué se puede citar de cada uno: [`diagramas/LEEME.md`](dia
 
 ## Contra qué versión está verificado
 
-Contra la **2.6.18**, que es exactamente la que guarda este repositorio en
-[`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/). Cualquier número de estos documentos se puede
+Contra la **2.6.18**, que es exactamente la que guarda este repositorio en [`../aidlc-v2/`](../aidlc-v2/), en la raíz. Cualquier número de estos documentos se puede
 comprobar ahí mismo, sin clonar nada: 33 etapas, 14 agentes, 11 scopes, 5 fases.
 
 El snapshot es **completo** — los 3.177 archivos, `dist/` y `tests/` incluidos — pero sin `.git`, así que no

@@ -12,7 +12,10 @@ fuentes/                  Todo el material oficial de AWS, descargado el 14 ago 
 ├── blogs/                Los 4 blogs oficiales en inglés, más un espejo local de sus imágenes
 ├── blogs-regionales/     9 casos publicados en blogs oficiales de AWS Japón, Corea y China
 ├── terceros/             4 lecturas externas: dos consultoras y dos corridas reales de la 2.0
-└── repo-oficial/         Snapshot de awslabs/aidlc-workflows (MIT-0): ramas main (reglas v1) y v2 (2.0)
+└── repo-oficial/main/    Snapshot de awslabs/aidlc-workflows rama main (MIT-0): las reglas de la v1
+
+aidlc-v2/                 El árbol completo de awslabs/aidlc-workflows rama v2 (MIT-0), 2.6.18
+                          3.177 archivos: es contra esto que se verifica todo el estudio
 
 conocimiento/             El estudio de la implementación 2.0, leída archivo por archivo
 ├── LEEME.md              Por dónde empezar, y la respuesta a lo de las 3 fases contra las 5

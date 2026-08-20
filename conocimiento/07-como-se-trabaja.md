@@ -1,6 +1,6 @@
 # Cómo se trabaja con AI-DLC — el método, sin la herramienta
 
-Leído literalmente de los 33 archivos de etapa de [`../fuentes/repo-oficial/v2/core/aidlc-common/stages/`](../fuentes/repo-oficial/v2/core/aidlc-common/stages/). Esto describe **el trabajo**, no la maquinaria.
+Leído literalmente de los 33 archivos de etapa de [`../aidlc-v2/core/aidlc-common/stages/`](../aidlc-v2/core/aidlc-common/stages/). Esto describe **el trabajo**, no la maquinaria.
 
 **Diagramas.** Dos, que se leen en orden distinto:
 
@@ -60,7 +60,7 @@ El paper describe tres. v2 implementa cinco. **Y v2 no documenta el mapeo en nin
 | **Construction** | **3 · construction** | 7 |
 | **Operations** | **4 · operation** | 7 |
 
-Verificado en [`../fuentes/repo-oficial/v2/core/tools/aidlc-lib.ts`](../fuentes/repo-oficial/v2/core/tools/aidlc-lib.ts) línea 130 — la constante `PHASES` — y contando los directorios de `core/aidlc-common/stages/`: 3 + 7 + 9 + 7 + 7 = 33.
+Verificado en [`../aidlc-v2/core/tools/aidlc-lib.ts`](../aidlc-v2/core/tools/aidlc-lib.ts) línea 130 — la constante `PHASES` — y contando los directorios de `core/aidlc-common/stages/`: 3 + 7 + 9 + 7 + 7 = 33.
 
 **La trampa está en la palabra «Inception».** En el paper abarca lo que en v2 son dos fases; en v2 nombra solo la segunda. Quien lea el paper y luego vea una pantalla que dice `INCEPTION` va a creer que está más avanzado de lo que está: le faltan por detrás las 7 etapas de ideación.
 

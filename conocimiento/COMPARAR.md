@@ -6,7 +6,7 @@ puede rehacer sin clonar nada:
 | Rama | Versión | Dónde | Archivos |
 |---|---|---|---|
 | `main` — la v1 | 1.0.1 | [`../fuentes/repo-oficial/main/`](../fuentes/repo-oficial/main/) | 294 |
-| `v2` — la 2.0 GA | 2.6.18 | [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/) | 3.177 |
+| `v2` — la 2.0 GA | 2.6.18 | [`../aidlc-v2/`](../aidlc-v2/) | 3.177 |
 
 Los dos snapshots son **completos**: el árbol entero de cada rama, sin quitar nada. Lo único que no traen es
 el `.git`, así que para historial hay que clonar.
@@ -21,14 +21,13 @@ el `.git`, así que para historial hay que clonar.
 Contra los snapshots, con `grep` a secas:
 
 ```bash
-cd fuentes/repo-oficial
+# desde la raíz del repositorio
+grep -ril "bolt" fuentes/repo-oficial/main/ | wc -l   # cuántos lo nombran en la v1
+grep -ril "bolt" aidlc-v2/core/ | wc -l               # y en el núcleo de la v2
 
-grep -ril "bolt" main/  | wc -l      # cuántos archivos lo nombran en la v1
-grep -ril "bolt" v2/core/ | wc -l    # y en el núcleo de la v2
-
-ls v2/core/aidlc-common/stages/*/*.md | wc -l   # las 33 etapas
-ls v2/core/agents/*.md | wc -l                  # los 14 agentes
-ls v2/core/scopes/*.md | wc -l                  # los 11 scopes
+ls aidlc-v2/core/aidlc-common/stages/*/*.md | wc -l   # las 33 etapas
+ls aidlc-v2/core/agents/*.md | wc -l                  # los 14 agentes
+ls aidlc-v2/core/scopes/*.md | wc -l                  # los 11 scopes
 ```
 
 Contra el repositorio vivo, si hace falta historial:
