@@ -10,6 +10,7 @@ Todo el material de este directorio fue descargado de fuentes oficiales de AWS e
 | **Blog de lanzamiento** — "AI-Driven Development Life Cycle: Reimagining Software Engineering", Raja SP, AWS DevOps Blog. Presenta el método: por qué, mental model, Inception/Construction/Operations, Mob Elaboration/Construction, Bolts. | 31 jul 2025 | `blogs/2025-07-31_ai-driven-development-life-cycle.md` | [aws.amazon.com](https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/) |
 | **Blog práctico** — "Building with AI-DLC using Amazon Q Developer", Will Matos, Raj Jain, Siddhesh Jog y Raja SP. El método aplicado paso a paso con Project Rules; publicado en la semana de re:Invent 2025. | 29 nov 2025 | `blogs/2025-11-29_building-with-ai-dlc-using-amazon-q-developer.md` | [aws.amazon.com](https://aws.amazon.com/blogs/devops/building-with-ai-dlc-using-amazon-q-developer/) |
 | **Adaptación a servicios financieros** — "AI-Driven Development Lifecycle for Financial Services", AWS for Industries. El método en entornos regulados: controles, cumplimiento, evidencia. Relevante para nuestros clientes de banca y sector público. | 26 may 2026 | `blogs/2026-05-26_ai-driven-development-lifecycle-for-financial-services.md` | [aws.amazon.com](https://aws.amazon.com/blogs/industries/ai-driven-development-lifecycle-for-financial-services/) |
+| **Blog del código abierto** — "Open-Sourcing Adaptive Workflows for AI-DLC", Will Matos, Raj Jain, Siddhesh Jog y Raja SP. El anuncio de la apertura del código. | 29 nov 2025 | `blogs/2025-11-29_open-sourcing-adaptive-workflows.md` | [aws.amazon.com](https://aws.amazon.com/blogs/devops/open-sourcing-adaptive-workflows-for-ai-driven-development-life-cycle-ai-dlc/) |
 | **Especificación AI-DLC Workflows 2.0** — el whitepaper técnico de la implementación 2.0 (GA). 6 páginas. | 2026 | `especificacion/AI-DLC-Workflows-2.0-Specification.pdf` (+ `-texto.md`) | [github.com/awslabs/aidlc-workflows (v2)](https://github.com/awslabs/aidlc-workflows/blob/v2/assets/AI-DLC-Workflows-2.0-Specification.pdf) |
 
 AWS presentó el método en re:Invent en diciembre de 2025 (sesión DVT214, "Introducing AI-Driven Development Lifecycle").
@@ -22,7 +23,9 @@ Snapshot del 14 ago 2026, sin historial git.
 - `repo-oficial/v2/` — rama `v2`: la **implementación 2.0 GA** (versión 2.6.2): 5 fases y 33 etapas (Initialization, Ideation, Inception, Construction, Operation), roster de 14 agentes, 9 scopes adaptativos, núcleo neutral en `core/` con superficies por herramienta en `harness/`. La documentación de uso está en `v2/docs/guide/`.
 - Excluido del snapshot v2 por peso: `dist/` (artefactos compilados), `tests/` y `uv.lock`. Si hacen falta: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
 
-**Ojo:** el borrador actual del documento del área describe el modelo del paper (3 fases). La implementación 2.0 ya trabaja con 5 fases y 33 etapas. Hay que decidir contra cuál de las dos versiones se escribe el procedimiento.
+**Sobre las 3 fases del paper y las 5 de la implementación:** ya está estudiado y no son dos metodologías. Las 5 son las 3 del paper con Inception partida en dos (`ideation` + `inception`) y una fase 0 de fontanería delante. El detalle, con la trampa que esconde la palabra «Inception», en [`../conocimiento/LEEME.md`](../conocimiento/LEEME.md).
+
+**Ojo con la versión del snapshot:** el `repo-oficial/v2/` de aquí es la **2.6.2**. El estudio de `../conocimiento/` se hizo contra la **2.6.18**, que añade dos scopes (`aidlc-classic` y `aidlc-express`, 9 → 11). Todo lo demás coincide.
 
 ## Casos publicados en blogs regionales oficiales de AWS
 
@@ -40,7 +43,19 @@ Experiencias reales de adopción; útiles como evidencia de resultados y patrone
 | `blogs-regionales/cn_apache-seatunnel-aidlc-practice.md` | China: práctica de AI-DLC en Apache SeaTunnel |
 | `blogs-regionales/cn_ai-engineering-platform-aidlc-migration.md` | China: migración de ingeniería de datos de plataforma a AI-DLC |
 
+## Lecturas de terceros
+
+No definen el método; sirven para contrastar cómo lo cuenta alguien de fuera y para ver corridas reales de la 2.0.
+
+| Archivo | Qué aporta |
+|---|---|
+| `terceros/01_exploreagentic_ai-dlc-explained.md` | Lectura conceptual, útil para contrastar narrativa |
+| `terceros/02_eleks_ai-dlc-explained.md` | Lectura de consultora, nivel conceptual |
+| `terceros/03_developersio_instalacion-v2-preview.md` | Instalación de la 2.0 preview verificada en tres harnesses. Señala los dos escollos reales: `bun` en el PATH y los ajustes de usuario de Codex CLI |
+| `terceros/04_developersio_ejecucion-v2-ga-kiro.md` | Corrida real de la 2.5.5 GA con Kiro CLI, hasta intent-capture |
+
 ## Notas de procedencia
 
 - Los `.md` de blogs se convirtieron del HTML original; las imágenes siguen apuntando a las URL de CloudFront de AWS.
+- `blogs/imagenes/` guarda un **espejo local parcial** de esas imágenes (17 archivos, descargados el 19 ago 2026), por si AWS rota el CDN. Es parcial: no cubre todas las que citan los blogs. Los `.md` siguen apuntando al original.
 - Los `-texto.md` junto a cada PDF son extracciones de texto plano para buscar y citar; ante cualquier duda, manda el PDF.
