@@ -17,6 +17,7 @@ fuentes/                  Todo el material oficial de AWS, descargado el 14 ago 
 conocimiento/             El estudio de la implementación 2.0, leída archivo por archivo
 ├── LEEME.md              Por dónde empezar, y la respuesta a lo de las 3 fases contra las 5
 ├── 01 … 07               De las fuentes al método: cómo funciona, qué falta, v1 vs v2, cómo se trabaja
+├── COMPARAR.md           La v1 y la v2 lado a lado, con los comandos para rehacer la comparación
 └── diagramas/            Tres .drawio: un caso completo, el método en 11 páginas, la maquinaria
 
 documento/                El entregable en curso: ocho capítulos en Markdown

@@ -34,12 +34,13 @@ Consecuencia para el documento del área: la espina del paper que ya asume [`../
 
 Los tres diagramas y qué se puede citar de cada uno: [`diagramas/LEEME.md`](diagramas/LEEME.md).
 
-## Una advertencia de versiones
+## Contra qué versión está verificado
 
-**El estudio se hizo contra la 2.6.18; el snapshot que guarda este repo en [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/) es la 2.6.2.** La estructura es idéntica —33 etapas, 14 agentes, 5 fases, el `PHASES` en la misma línea— así que todas las citas de estos documentos se sostienen contra el snapshot. La diferencia que sí importa:
+Contra la **2.6.18**, que es exactamente la que guarda este repositorio en
+[`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/). Cualquier número de estos documentos se puede
+comprobar ahí mismo, sin clonar nada: 33 etapas, 14 agentes, 11 scopes, 5 fases.
 
-| | 2.6.2 (el snapshot) | 2.6.18 (el estudio) |
-|---|---|---|
-| Scopes | 9 | **11** — añade `aidlc-classic` y `aidlc-express` |
+Del snapshot se excluyen `dist/` (código compilado, se regenera), `tests/` y `uv.lock`. Para trabajar contra el
+repositorio vivo: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
 
-Si un número de estos documentos no cuadra con el snapshot, esa es la razón. Para reproducir contra la versión estudiada: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
+Cómo comparar la v1 y la v2 con comandos reproducibles: [`COMPARAR.md`](COMPARAR.md).

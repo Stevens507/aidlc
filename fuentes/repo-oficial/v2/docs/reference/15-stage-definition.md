@@ -235,10 +235,9 @@ not a global assertion that the artifact always exists somewhere:
 > consume of that producer's artifacts becomes moot — there is
 > nothing to require.
 
-**Why the scoped reading.** Every scope except the `all`-execute ones
-(`enterprise`, `feature`, `workshop`) deliberately skips upstream
-stages. A flat global `required: true` would make those scopes
-structurally invalid, which is wrong — they're legitimate operating
+**Why the scoped reading.** Only `enterprise` and `feature` execute every stage;
+all other scopes deliberately skip upstream stages. A flat global
+`required: true` would make those scopes structurally invalid, which is wrong — they're legitimate operating
 modes. The real contract is conditional: "if upstream runs, feed me
 downstream." The stage body already handles the absence case
 gracefully (prose instructions like "if available" or fallbacks from
@@ -345,7 +344,7 @@ On every topology the conductor is the bus: agents never invoke each other —
 only the conductor delegates. The writing model mirrors a real working
 session: everyone writes their own work, the owner collates and edits. Each
 dispatched support agent writes a contribution file
-(`contributions/<agent-slug>.md`, stage-protocol §11 shape with the
+(`contributions/<agent-slug>.md`, `stage-protocol-ensemble.md` §11 shape with the
 identity-marker first line); the lead alone edits the stage's `produces[]`
 artifacts; pipeline links advance the artifacts directly instead. On mob and
 subagent-with-supports stages the contribution files are the completion
@@ -403,17 +402,19 @@ never silently ignored.
 
 `review_class` selects the review contract: `adversarial` (the refute-and-repair
 loop above — the default when a `reviewer` is declared without a class) or
-`advisory` (one pass whose findings are quoted verbatim at the human approval
-gate, no repair loop; the effective iteration budget is 1). The shipped split:
+`advisory` (one normal-flow pass whose findings are quoted verbatim at the human
+approval gate, no repair loop; the effective iteration budget is 1). A later
+write that invalidates its terminal receipt permits one bounded recovery request
+at the next ordinal. The shipped split:
 the 7 human-gated ideation/inception prose stages declare `advisory`; the 5
 Construction design/build stages default `adversarial`. `none` is deliberately
 not a stage value — a stage that wants no review deletes its `reviewer:` line;
 `none` exists on the scope `review_cap` and the per-run `--review` override,
 which can silence a declared reviewer without editing stages. The effective
 class at runtime is the LOWEST of stage declaration, the active scope's
-`review_cap` (the shipped `bugfix`, `poc`, and `workshop` scopes cap to
-`advisory`), and the per-run override — a cap or override can lower a class but
-never raise one. Autonomous swarm reviews are exempt from caps and overrides:
+`review_cap` (the shipped `bugfix`, `poc`, `classic`, and `workshop` scopes cap to
+`advisory`, while `express` caps to `none`), and the per-run override — a cap
+or override can lower a class but never raise one. Autonomous swarm reviews are exempt from caps and overrides:
 inside a Bolt the reviewer is the only pre-merge verification, so the declared
 class always applies there. Like the cap, `review_class` requires a `reviewer`
 (schema error `review_class requires a reviewer`).

@@ -2,7 +2,7 @@
 
 Recopilado el 2026-08-19 leyendo clones de las dos ramas: `main` (1.0.1) y `v2` (commit `fbb1460c`, **2.6.18**).
 
-> En este repositorio las dos ramas están en [`../fuentes/repo-oficial/main/`](../fuentes/repo-oficial/main/) y [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/), pero ese snapshot es la **2.6.2**. La estructura es la misma; la diferencia está anotada en [LEEME](LEEME.md#una-advertencia-de-versiones).
+> Las dos ramas están guardadas en este repositorio, en la misma versión que se estudió: [`../fuentes/repo-oficial/main/`](../fuentes/repo-oficial/main/) y [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/).
 
 El **texto completo** de estas fuentes está en [`../fuentes/`](../fuentes/FUENTES.md) — ~16.500 palabras.
 

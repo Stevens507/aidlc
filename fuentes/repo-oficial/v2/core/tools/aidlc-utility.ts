@@ -38,9 +38,11 @@ import {
   createIntent,
   composeMarkerPath,
   COMPOSE_MARKER_TTL_MS,
+  DEFAULT_SCOPE,
   DEFAULT_SPACE,
   detectLeakedLocks,
   docsDir,
+  envDefaultScope,
   knowledgeDir,
   agentsDir,
   emitError,
@@ -312,6 +314,13 @@ Utilities:
   plugin select [names]  Show or set the enabled plugin list
   plugin list       List installed plugins and enabled state (--json for structured output)
   plugin sync       Compose installed plugins into the current install
+  knowledge onboard [path]  Index customer documents into the space DocumentKB
+  knowledge sync    Reconcile the catalog with disk; retries extractor_unavailable rows
+  knowledge list    The DocumentKB catalog (--json for structured output)
+  knowledge show <id>  One document's record, plus its extracted text
+  knowledge associate <id> --intent [slug]   Scope a document to one intent
+  knowledge dissociate <id> --intent [slug]  Remove that scoping
+  knowledge rebind <id> --to <path>  Repair a row whose original moved AND changed
   --doctor          Run health check on hooks, settings, and directory structure
   --doctor --export Write a redacted diagnostic report (timeline + findings, no work product); --output <dir> to relocate
   --stage <id>      Jump to a specific stage (by slug or number, e.g., code-generation or 3.5)
@@ -2029,13 +2038,22 @@ function handleDoctor(projectDir: string, flags: Record<string, string> = {}): v
   try {
     const leaks = detectLeakedLocks(projectDir, true);
     if (leaks.length === 0) {
-      results.push({ pass: true, label: "Audit locks: none leaked" });
+      results.push({ pass: true, label: "Runtime locks: none leaked" });
     } else {
       for (const leak of leaks) {
+        const subject = leak.kind === "audit" ? "audit lock"
+          : leak.kind === "active-directive" ? "active-directive lock"
+          : "legacy active-directive transaction";
+        const outcome = leak.cleared ? "cleared" : "not cleared";
+        const manual = leak.reason === "legacy-transaction";
         results.push({
           pass: false,
-          label: `Leaked audit lock on bucket "${leak.bucket}" (${leak.reason}${leak.ownerPid !== null ? `, pid ${leak.ownerPid}` : ""}) — cleared`,
-          fix: "the stale lock was cleared automatically; re-run your /aidlc command",
+          label: `Leaked ${subject} on bucket "${leak.bucket}" (${leak.reason}${leak.ownerPid !== null ? `, pid ${leak.ownerPid}` : ""}) — ${outcome}`,
+          fix: manual
+            ? `stop all AI-DLC processes, inspect ${leak.lockDir}, then remove or restore it under quiescence`
+            : leak.cleared
+              ? "the stale lock was cleared automatically; re-run your /aidlc command"
+              : "the lock owner changed during diagnosis; re-run doctor before manual action",
         });
       }
     }
@@ -2689,7 +2707,7 @@ function handleDoctor(projectDir: string, flags: Record<string, string> = {}): v
     });
   }
 
-  // Scope validation — run validateScope over all 9 scopes, tally errors
+  // Scope validation — run validateScope over all 11 scopes, tally errors
   // and advisories. Repo-level setup check, not workflow-state.
   try {
     const scopes = [...validScopes()];
@@ -3822,10 +3840,13 @@ function handleIntentCreate(projectDir: string, flags: Record<string, string>): 
     );
   }
 
-  // Default when --scope is omitted; selection-aware so a plugin-only install
-  // (where the core "poc" default is deselected) resolves to its nominated
-  // freeform default instead of crashing with "Unknown scope".
-  const scope = flags.scope || resolveDefaultScope("poc");
+  // Default when --scope is omitted: AWS_AIDLC_DEFAULT_SCOPE overrides, then
+  // the framework's single hard-coded fallback (DEFAULT_SCOPE, "classic");
+  // selection-aware so a plugin-only install (where the core default is
+  // deselected) resolves to its nominated freeform default instead of
+  // crashing with "Unknown scope".
+  const scope = flags.scope || envDefaultScope() ||
+    resolveDefaultScope(DEFAULT_SCOPE);
   if (!validScopes().has(scope)) {
     die(
       `Unknown scope: "${scope}". Valid scopes: ${[...validScopes()].join(", ")}.`

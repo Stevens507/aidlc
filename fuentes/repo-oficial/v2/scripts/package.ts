@@ -21,6 +21,8 @@
 //      uniform for all shipped harnesses).
 //   5. EMIT via harness/<name>/emit.ts if the manifest declares one (codex only
 //      today: config.toml, hooks.json, trust-seed, agent TOMLs, .agents/skills).
+//   6. REFRESH generated stage/scope table regions in the assembled orchestrator
+//      skill from the just-compiled graph and scope grid.
 //
 // THE TRANSFORM CLASS (T5 — the only permitted text transform): the harness-dir
 // token. core/ prose carries {{HARNESS_DIR}}; here it becomes `.claude`/`.kiro`/
@@ -98,6 +100,18 @@ if (TIER_CAP) {
 // The shared onboarding-doc skeleton, rendered per harness (scripts/onboarding.ts).
 const ONBOARDING_SKELETON = join(CORE_ROOT, "templates", "onboarding.md");
 const HARNESS_TOKEN = /\{\{HARNESS_DIR\}\}/g;
+const GENERATED_SKILL_REGIONS = [
+  {
+    verb: "stage-table",
+    begin: "<!-- BEGIN: compiled stage graph via `bun aidlc-utility.ts stage-table` - do NOT hand-edit -->",
+    end: "<!-- END: compiled stage graph -->",
+  },
+  {
+    verb: "scope-table",
+    begin: "<!-- BEGIN: compiled scope grid via `bun aidlc-utility.ts scope-table` - do NOT hand-edit -->",
+    end: "<!-- END: compiled scope grid -->",
+  },
+] as const;
 
 // Harnesses the packager builds = every harness/<name>/ that carries a
 // manifest.ts. DISCOVERED, not hardcoded: adding harness #N is one harness/<n>/
@@ -413,7 +427,11 @@ const ACTIVE_SPACE_VALUE = "default\n";
 // open-set descriptor. Pretty-printed + trailing newline keeps committed
 // output diff-friendly and stable under --check.
 function writeHarnessData(treeRoot: string, m: HarnessManifest): void {
-  const data = {
+  // A FRESH object, deliberately: the runtime READER tolerates unknown keys, but
+  // this writer alone decides what ships. Anything hand-added to the committed
+  // harness.json therefore fails `--check` and is erased on the next build -- so
+  // a new configuration field has to be added HERE to exist at all.
+  const data: Record<string, unknown> = {
     name: m.name,
     harnessDir: m.harnessDir,
     rulesSubdir: m.rulesRename ?? "rules",
@@ -421,6 +439,9 @@ function writeHarnessData(treeRoot: string, m: HarnessManifest): void {
       ? { runnerFrontmatterAdditions: m.runnerFrontmatterAdditions }
       : {}),
   };
+  // Emitted only when a manifest sets it, so the three-field output stays
+  // byte-identical for every harness that does not -- which is all of them today.
+  if (m.documentExtractors) data.documentExtractors = m.documentExtractors;
   const dst = join(treeRoot, HARNESS_DATA);
   mkdirSync(dirname(dst), { recursive: true });
   writeFileSync(dst, `${JSON.stringify(data, null, 2)}\n`);
@@ -667,6 +688,11 @@ function buildTree(m: HarnessManifest, outRoot: string, seedFrom: string): strin
       tierCap: TIER_CAP,
     });
   }
+
+  // 6. Generated table regions are build products, not authored prose. Refresh
+  //    them only after emit(), because Codex and Copilot place the orchestrator
+  //    skill outside <harnessDir>/skills/.
+  refreshGeneratedSkillRegions(outRoot, treeRoot, harnessDir, m);
   return [...walk(outRoot)];
 }
 
@@ -682,7 +708,7 @@ function runTool(
   harnessName: string,
   args: string[],
   rulesDirAbs?: string | null,
-): void {
+): string {
   const toolPath = join(treeRoot, args[0]);
   const rest = args.slice(1);
   const env: Record<string, string> = {
@@ -704,6 +730,66 @@ function runTool(
     if (res.stderr) console.error(res.stderr);
     process.exit(1);
   }
+  return res.stdout ?? "";
+}
+
+function assembledOrchestratorSkill(
+  outRoot: string,
+  manifest: HarnessManifest,
+): string {
+  const rel = manifest.orchestratorSkillPath ??
+    join(manifest.harnessDir, "skills", "aidlc", "SKILL.md");
+  if (isAbsolute(rel) || rel.split(/[\\/]/).includes("..")) {
+    throw new Error(
+      `packager: ${manifest.name} orchestratorSkillPath must stay within its dist root: ${rel}`,
+    );
+  }
+  const skillPath = join(outRoot, rel);
+  if (!existsSync(skillPath)) {
+    throw new Error(
+      `packager: ${manifest.name} orchestrator SKILL.md not found at ${skillPath}`,
+    );
+  }
+  return skillPath;
+}
+
+function refreshGeneratedSkillRegions(
+  outRoot: string,
+  treeRoot: string,
+  harnessDir: string,
+  manifest: HarnessManifest,
+): void {
+  const skillPath = assembledOrchestratorSkill(outRoot, manifest);
+  let body = readFileSync(skillPath, "utf-8").replace(/\r\n/g, "\n");
+
+  for (const region of GENERATED_SKILL_REGIONS) {
+    const rendered = runTool(
+      treeRoot,
+      harnessDir,
+      manifest.name,
+      ["tools/aidlc-utility.ts", region.verb],
+    ).trimEnd();
+    const beginIdx = body.indexOf(region.begin);
+    const endIdx = body.indexOf(region.end);
+    if (beginIdx === -1 && endIdx === -1) continue;
+    if (
+      beginIdx === -1 ||
+      endIdx === -1 ||
+      endIdx < beginIdx ||
+      body.lastIndexOf(region.begin) !== beginIdx ||
+      body.lastIndexOf(region.end) !== endIdx
+    ) {
+      throw new Error(
+        `packager: malformed ${region.verb} markers in ${skillPath}`,
+      );
+    }
+    body =
+      body.slice(0, beginIdx) +
+      rendered +
+      body.slice(endIdx + region.end.length);
+  }
+
+  writeFileSync(skillPath, body, "utf-8");
 }
 
 // Defense-in-depth backstop: rewrite any residual "<harnessDir>/rules/" →

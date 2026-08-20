@@ -70,6 +70,13 @@ export type HarnessManifest = {
   /** The harness directory the token substitutes to (".claude" | ".kiro" | ".codex" | ".aidlc" | ".cursor"). */
   harnessDir: string;
   /**
+   * Project-root-relative path to the emitted orchestrator SKILL.md. Defaults
+   * to <harnessDir>/skills/aidlc/SKILL.md; emit-owned harnesses that place
+   * skills elsewhere declare their emitted location explicitly (for example
+   * Codex under .agents/skills/).
+   */
+  orchestratorSkillPath?: string;
+  /**
    * Which tier-projection flavor this harness's agent surfaces use
    * (core/tools/aidlc-tiers.ts TIER_PROJECTIONS column). Declared here so a
    * new harness picks its projection shape in its manifest - the packager
@@ -107,6 +114,23 @@ export type HarnessManifest = {
   onboarding?: OnboardingSpec | null;
   /** Rename core's rules/ dir to this (kiro: "steering", codex: "aidlc-rules", claude: null). */
   rulesRename: string | null;
+  /**
+   * DocumentKB text extractors, keyed by MIME type, emitted into
+   * <harnessDir>/tools/data/harness.json. ABSENT by default in every harness —
+   * with no entry the tool probes `pdftotext` on PATH and degrades to
+   * `extractor_unavailable`, so this is an override, never a requirement.
+   *
+   * It has to be PACKAGER-owned rather than hand-edited: writeHarnessData()
+   * builds a FRESH object, and harness.json is committed and byte-diffed by
+   * `--check`, so a hand-added field both fails the drift guard and is erased on
+   * the next build. And a team needs its extractor choice COMMITTED so it travels
+   * to every clone, which rules out the runtime-written path too — that one
+   * targets a different, install-local file.
+   *
+   * `argv` is an array, never a shell string: the value becomes a process
+   * invocation, and `$IN` is the only substitution.
+   */
+  documentExtractors?: Record<string, { argv: string[]; timeoutMs?: number }> | null;
   /**
    * Skip the packager's standard runner-gen step (write + scopes into
    * <harnessDir>/skills/). Codex sets this: it ships NO skills inside
