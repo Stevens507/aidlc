@@ -1,0 +1,9 @@
+# Clon de trabajo de awslabs/aidlc-workflows, rama v2.
+# No se versiona: pesa 77 MB y 2.089 de sus archivos son `dist/`, codigo
+# compilado que se regenera. Lo que hace falta para leer el metodo ya esta
+# guardado en fuentes/repo-oficial/v2/, en la misma version (2.6.18).
+#
+# Sirve para comprobar contra el repositorio vivo y para traer versiones
+# nuevas:  cd aidlc-v2 && git fetch origin v2 && git pull
+# Como usarlo: conocimiento/COMPARAR.md
+aidlc-v2/
