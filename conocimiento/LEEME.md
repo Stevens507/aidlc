@@ -40,7 +40,7 @@ Contra la **2.6.18**, que es exactamente la que guarda este repositorio en
 [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/). Cualquier número de estos documentos se puede
 comprobar ahí mismo, sin clonar nada: 33 etapas, 14 agentes, 11 scopes, 5 fases.
 
-Del snapshot se excluyen `dist/` (código compilado, se regenera), `tests/` y `uv.lock`. Para trabajar contra el
-repositorio vivo: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
+El snapshot es **completo** — los 3.177 archivos, `dist/` y `tests/` incluidos — pero sin `.git`, así que no
+trae historial. Para trabajar contra el repositorio vivo: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
 
 Cómo comparar la v1 y la v2 con comandos reproducibles: [`COMPARAR.md`](COMPARAR.md).

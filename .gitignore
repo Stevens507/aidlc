@@ -1,9 +1,11 @@
-# Clon de trabajo de awslabs/aidlc-workflows, rama v2.
-# No se versiona: pesa 77 MB y 2.089 de sus archivos son `dist/`, codigo
-# compilado que se regenera. Lo que hace falta para leer el metodo ya esta
-# guardado en fuentes/repo-oficial/v2/, en la misma version (2.6.18).
+# Clon vivo de awslabs/aidlc-workflows, rama v2.
 #
-# Sirve para comprobar contra el repositorio vivo y para traer versiones
-# nuevas:  cd aidlc-v2 && git fetch origin v2 && git pull
+# No se versiona porque lleva su propio `.git` dentro: git lo tomaria por un
+# submodulo y no subiria ni un archivo. Todo su contenido esta en el repo, en
+# fuentes/repo-oficial/v2/, completo y en la misma version (2.6.18) -- los
+# 3.177 archivos, `dist/` y `tests/` incluidos.
+#
+# Esta carpeta sirve para lo que el snapshot no puede: historial de git, y
+# traer versiones nuevas con  cd aidlc-v2 && git fetch origin v2 && git pull
 # Como usarlo: conocimiento/COMPARAR.md
 aidlc-v2/

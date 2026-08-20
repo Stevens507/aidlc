@@ -21,7 +21,7 @@ Snapshot del 14 ago 2026, sin historial git.
 
 - `repo-oficial/main/` — rama `main`: las **reglas AI-DLC v1** (`aidlc-rules/` 1.0.1): reglas core y detalladas por fase (inception, construction, operations), extensiones (security, resiliency, testing) e instrucciones de instalación para Kiro, Amazon Q Developer, Cursor, Cline, Claude Code, Copilot y Codex.
 - `repo-oficial/v2/` — rama `v2`: la **implementación 2.0 GA** (versión **2.6.18**, refrescada el 20 ago 2026): 5 fases y 33 etapas (Initialization, Ideation, Inception, Construction, Operation), roster de 14 agentes, 11 scopes adaptativos, núcleo neutral en `core/` con superficies por herramienta en `harness/`. La documentación de uso está en `v2/docs/guide/`.
-- Excluido del snapshot v2 por peso: `dist/` (artefactos compilados), `tests/` y `uv.lock`. Si hacen falta: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
+- El snapshot de la v2 es **completo**: los 3.177 archivos del árbol, `dist/` y `tests/` incluidos. Lo único que no está es el `.git`, así que no trae historial. Para eso: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
 
 **Sobre las 3 fases del paper y las 5 de la implementación:** ya está estudiado y no son dos metodologías. Las 5 son las 3 del paper con Inception partida en dos (`ideation` + `inception`) y una fase 0 de fontanería delante. El detalle, con la trampa que esconde la palabra «Inception», en [`../conocimiento/LEEME.md`](../conocimiento/LEEME.md).
 

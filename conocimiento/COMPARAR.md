@@ -6,10 +6,10 @@ puede rehacer sin clonar nada:
 | Rama | Versión | Dónde | Archivos |
 |---|---|---|---|
 | `main` — la v1 | 1.0.1 | [`../fuentes/repo-oficial/main/`](../fuentes/repo-oficial/main/) | 294 |
-| `v2` — la 2.0 GA | 2.6.18 | [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/) | 471 |
+| `v2` — la 2.0 GA | 2.6.18 | [`../fuentes/repo-oficial/v2/`](../fuentes/repo-oficial/v2/) | 3.177 |
 
-Del snapshot de la v2 se excluyen `dist/`, `tests/` y `uv.lock`: código compilado y pruebas, que no aportan
-nada a la lectura del método.
+Los dos snapshots son **completos**: el árbol entero de cada rama, sin quitar nada. Lo único que no traen es
+el `.git`, así que para historial hay que clonar.
 
 > **La trampa de quien clona.** La rama por defecto del repositorio de AWS es `main`, que es **la v1**, y
 > GitHub sigue marcando la 1.0.1 como «Latest release» pese al GA de la 2.0
