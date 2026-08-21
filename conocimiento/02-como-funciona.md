@@ -1,6 +1,6 @@
 # AI-DLC v2 — cómo funciona por dentro
 
-Estudio de [`../aidlc-v2/`](../aidlc-v2/) (2.6.18) y del whitepaper *AI-DLC Workflows 2.0 Specification*.
+Estudio de [`../aidlc-v2/`](../aidlc-v2/) (2.6.54) y del whitepaper *AI-DLC Workflows 2.0 Specification*.
 
 Ver también: [01 — fuentes](01-fuentes.md) · [03 — qué falta](03-que-falta.md) · [04 — v1 vs v2](04-v1-vs-v2.md)
 

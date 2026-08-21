@@ -6,7 +6,7 @@ puede rehacer sin clonar nada:
 | Rama | Versión | Dónde | Archivos |
 |---|---|---|---|
 | `main` — la v1 | 1.0.1 | [`../fuentes/repo-oficial/main/`](../fuentes/repo-oficial/main/) | 294 |
-| `v2` — la 2.0 GA | 2.6.18 | [`../aidlc-v2/`](../aidlc-v2/) | 3.177 |
+| `v2` — la 2.0 GA | 2.6.54 | [`../aidlc-v2/`](../aidlc-v2/) | 3.185 |
 
 Los dos snapshots son **completos**: el árbol entero de cada rama, sin quitar nada. Lo único que no traen es
 el `.git`, así que para historial hay que clonar.

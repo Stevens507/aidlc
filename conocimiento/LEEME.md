@@ -36,7 +36,7 @@ Los tres diagramas y qué se puede citar de cada uno: [`diagramas/LEEME.md`](dia
 
 ## Contra qué versión está verificado
 
-Contra la **2.6.18**, que es exactamente la que guarda este repositorio en [`../aidlc-v2/`](../aidlc-v2/), en la raíz. Cualquier número de estos documentos se puede
+Se leyó archivo por archivo en la **2.6.18** y se **reverificó en la 2.6.54**, que es la que guarda este repositorio en [`../aidlc-v2/`](../aidlc-v2/), en la raíz. Entre una y otra hay 23 commits de AWS y ninguno movió la estructura: siguen siendo 33 etapas, 14 agentes, 11 scopes, 5 fases y el `PHASES` en la línea 130. Cualquier número de estos documentos se puede
 comprobar ahí mismo, sin clonar nada: 33 etapas, 14 agentes, 11 scopes, 5 fases.
 
 El snapshot es **completo** — los 3.177 archivos, `dist/` y `tests/` incluidos — pero sin `.git`, así que no

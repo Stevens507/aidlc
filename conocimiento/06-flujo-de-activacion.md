@@ -1,6 +1,6 @@
 # El flujo de activación — qué enciende qué
 
-Trazado sobre el código de [`../aidlc-v2/`](../aidlc-v2/) (2.6.18), no sobre la documentación. Donde el código y los docs discrepan, mando el código y lo señalo.
+Trazado sobre el código de [`../aidlc-v2/`](../aidlc-v2/) (2.6.54), no sobre la documentación. Donde el código y los docs discrepan, mando el código y lo señalo.
 
 Diagrama: [`diagramas/aidlc-v2-maquinaria.drawio`](diagramas/aidlc-v2-maquinaria.drawio) — 4 páginas.
 

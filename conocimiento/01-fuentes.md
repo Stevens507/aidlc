@@ -48,6 +48,7 @@ Ver también: [02 — cómo funciona](02-como-funciona.md) · [03 — qué falta
 | **2.3.0** | **2026-07-07** | Corte donde se declara **GA**. Mecanismo de plugins. |
 | 2.5.5 | 2026-07-22 | La versión que reseña DevelopersIO tras GA. |
 | 2.6.18 | 2026-08-19 | HEAD clonado. Scopes classic/express, módulos de protocolo condicionales. |
+| **2.6.54** | **2026-08-21** | Snapshot actual del repositorio. 23 commits en dos días: casi todo correcciones. Dos de fondo: bucle acotado de vuelta de Build&Test a generación de código (2.6.20) y cursor de continuación atómico en el motor (2.6.51). **Ninguno mueve la estructura.** |
 
 187 entradas de CHANGELOG en cuatro meses. **Conviene fijar una versión** en cualquier documento que dependa de esto — el propio README lo pide: *«pin a known-good version for anything you depend on»*.
 

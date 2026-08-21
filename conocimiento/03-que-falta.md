@@ -1,6 +1,6 @@
 # AI-DLC v2 — ¿está hecho? ¿qué habría que cambiar?
 
-Estado real de [`../aidlc-v2/`](../aidlc-v2/) (2.6.18) frente a lo que necesitaría una organización en entorno regulado.
+Estado real de [`../aidlc-v2/`](../aidlc-v2/) (2.6.54) frente a lo que necesitaría una organización en entorno regulado.
 
 Ver también: [01 — fuentes](01-fuentes.md) · [02 — cómo funciona](02-como-funciona.md) · [04 — v1 vs v2](04-v1-vs-v2.md)
 

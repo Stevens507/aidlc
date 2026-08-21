@@ -20,12 +20,12 @@ AWS presentó el método en re:Invent en diciembre de 2025 (sesión DVT214, "Int
 Snapshot del 14 ago 2026, sin historial git.
 
 - `repo-oficial/main/` — rama `main`: las **reglas AI-DLC v1** (`aidlc-rules/` 1.0.1): reglas core y detalladas por fase (inception, construction, operations), extensiones (security, resiliency, testing) e instrucciones de instalación para Kiro, Amazon Q Developer, Cursor, Cline, Claude Code, Copilot y Codex.
-- La rama `v2` — la **implementación 2.0 GA** — no está aquí sino en [`../aidlc-v2/`](../aidlc-v2/), en la raíz, porque es contra lo que se trabaja a diario. Versión **2.6.18**: 5 fases y 33 etapas (Initialization, Ideation, Inception, Construction, Operation), roster de 14 agentes, 11 scopes adaptativos, núcleo neutral en `core/` con superficies por herramienta en `harness/`. La documentación de uso está en `aidlc-v2/docs/guide/`.
+- La rama `v2` — la **implementación 2.0 GA** — no está aquí sino en [`../aidlc-v2/`](../aidlc-v2/), en la raíz, porque es contra lo que se trabaja a diario. Versión **2.6.54**: 5 fases y 33 etapas (Initialization, Ideation, Inception, Construction, Operation), roster de 14 agentes, 11 scopes adaptativos, núcleo neutral en `core/` con superficies por herramienta en `harness/`. La documentación de uso está en `aidlc-v2/docs/guide/`.
 - Los dos árboles son **completos** — 3.177 archivos la v2, `dist/` y `tests/` incluidos — pero sin `.git`, así que no traen historial. Para eso: `git clone -b v2 https://github.com/awslabs/aidlc-workflows`.
 
 **Sobre las 3 fases del paper y las 5 de la implementación:** ya está estudiado y no son dos metodologías. Las 5 son las 3 del paper con Inception partida en dos (`ideation` + `inception`) y una fase 0 de fontanería delante. El detalle, con la trampa que esconde la palabra «Inception», en [`../conocimiento/LEEME.md`](../conocimiento/LEEME.md).
 
-**El snapshot y el estudio van a la par:** los dos son la **2.6.18**, así que cualquier cita de `../conocimiento/` se puede comprobar aquí mismo.
+**El snapshot va a la par del estudio:** se leyó en la 2.6.18 y se reverificó en la **2.6.54**, que es la que está aquí. Cualquier cita de `../conocimiento/` se comprueba contra este árbol.
 
 ## Casos publicados en blogs regionales oficiales de AWS
 

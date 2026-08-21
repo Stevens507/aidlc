@@ -14,7 +14,7 @@ fuentes/                  Todo el material oficial de AWS, descargado el 14 ago 
 ├── terceros/             4 lecturas externas: dos consultoras y dos corridas reales de la 2.0
 └── repo-oficial/main/    Snapshot de awslabs/aidlc-workflows rama main (MIT-0): las reglas de la v1
 
-aidlc-v2/                 El árbol completo de awslabs/aidlc-workflows rama v2 (MIT-0), 2.6.18
+aidlc-v2/                 El árbol completo de awslabs/aidlc-workflows rama v2 (MIT-0), 2.6.54
                           3.177 archivos: es contra esto que se verifica todo el estudio
 
 conocimiento/             El estudio de la implementación 2.0, leída archivo por archivo
