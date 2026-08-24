@@ -1,6 +1,6 @@
-# 8. Adopción
+# 8. ADOPCIÓN
 
-La inducción al método es la misma para todo el equipo, sin importar el proyecto en el que esté. El método no se estudia, se practica: los rituales se aprenden ejecutándolos sobre trabajo real.
+La inducción al método es la misma para todo el equipo, sin importar el proyecto en el que esté. El método no se estudia, se practica: los rituales se aprenden ejecutándose sobre trabajo real.
 
 La inducción tiene cuatro piezas:
 

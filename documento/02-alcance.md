@@ -1,4 +1,4 @@
-# 2. Alcance: cuándo aplica y cuándo no
+# 2. ALCANCE: CUÁNDO APLICA Y CUÁNDO NO
 
 El ciclo completo está pensado para sistemas con complejidad de arquitectura, decisiones de diseño que negociar y exigencias de escala, integración o cumplimiento. El trabajo simple no lo necesita.
 

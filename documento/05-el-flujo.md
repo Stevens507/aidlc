@@ -1,8 +1,8 @@
-# 5. El flujo
+# 5. EL FLUJO
 
 El ciclo se recorre en nueve pasos, del Intent al sistema en producción.
 
-[Figura 2 — El flujo: nueve pasos, tres fases]
+![Figura 3. Los nueve pasos, agrupados en tres fases.](image6.png "5.90")
 
 El recorrido empieza con un plan. La IA lee la intención de negocio y propone los pasos necesarios para llevarla a cabo; el equipo lo revisa, lo corrige y lo aprueba. Después la IA descompone cada paso en tareas más finas, bajo la misma revisión. Cada paso deja artefactos que el siguiente usa como contexto, y por eso el orden importa.
 

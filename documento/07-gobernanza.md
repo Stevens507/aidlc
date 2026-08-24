@@ -1,4 +1,4 @@
-# 7. Gobernanza
+# 7. GOBERNANZA
 
 El proceso deja constancia de quién decidió qué. Esa constancia es lo que responde a un auditor o al oficial de cumplimiento de un cliente.
 
